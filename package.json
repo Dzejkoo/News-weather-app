@@ -1,0 +1,31 @@
+{
+  "name": "basic-webpack",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack serve --config ./config/webpack.config.js",
+    "dev": "webpack --config ./config/webpack.config.js",
+    "prod": "webpack --config ./config/webpack.config.prod.js"
+  },
+  "author": "Jakub Jóźwiak",
+  "license": "ISC",
+  "browserslistrc": "> 0.3%",
+  "devDependencies": {
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "css-loader": "^5.2.6",
+    "eslint": "^7.30.0",
+    "eslint-loader": "^4.0.2",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.2",
+    "mini-css-extract-plugin": "^2.1.0",
+    "node-sass": "^6.0.1",
+    "normalize.css": "^8.0.1",
+    "raw-loader": "^4.0.2",
+    "sass-loader": "^12.1.0",
+    "style-loader": "^3.0.0",
+    "webpack": "^5.43.0",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "description": ""
+}
