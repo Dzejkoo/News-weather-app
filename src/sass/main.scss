@@ -1,1 +1,11 @@
 @import 'reset';
+@import 'variables';
+@import 'weather/weather';
+
+body,
+html {
+    font-size: 10px;
+    font-family: 'Poppins',
+        sans-serif;
+    ;
+}

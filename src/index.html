@@ -6,16 +6,131 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <div class='weater'>
-        <div class='weater__localization'></div>
-        <div class='weater__temperature'></div>
+    <section class='weather-app'>
+        <div class='weather'>
+            <div class='weather-today'>
+                <div class='weather-today__localization'>
+                    <span class='weather-today__localization-icon'>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0)">
+                                <path
+                                    d="M18.8492 0.064386L0.518217 7.56345C-0.252741 7.87884 -0.134904 9.00541 0.684641 9.15442L9.28262 10.7177L10.8459 19.3157C10.9949 20.1352 12.1215 20.2531 12.4369 19.4821L19.9359 1.15109C20.2157 0.467265 19.5331 -0.215384 18.8492 0.064386ZM11.975 16.2099L10.819 9.85203C10.7569 9.51059 10.4897 9.24335 10.1483 9.18129L3.79038 8.0253L17.6412 2.35906L11.975 16.2099Z"
+                                    fill="#C9C9C9" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0">
+                                    <rect width="20" height="20" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </span>
+                    <span class='weather-today__localization-city'>Poznań,</span>
+                    <span class='weather-today__localization-country'>Poland</span>
+                </div>
+                <div class='weather-today__date'>
+                    <span class='weather-today__date-name'>Today 25 July</span>
+                </div>
+                <div class='weather-today__cycle'>
+                    <div class='weather-today__sunrise'>
+                        <span class='weather-today__sunrise-icon'>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0)">
+                                    <path d="M9.41406 4.28323H10.5859V8.61917H9.41406V4.28323Z" fill="#C9C9C9" />
+                                    <path
+                                        d="M16.1047 15.3379C15.8087 12.2301 13.184 9.79108 10 9.79108C6.81602 9.79108 4.19133 12.2301 3.89535 15.3379H0V16.5097H20V15.3379H16.1047ZM10 10.963C12.5373 10.963 14.6357 12.8775 14.9265 15.3379H5.07348C5.36426 12.8775 7.46273 10.963 10 10.963Z"
+                                        fill="#C9C9C9" />
+                                    <path d="M2.48706 17.6816H17.5131V18.8535H2.48706V17.6816Z" fill="#C9C9C9" />
+                                    <path
+                                        d="M0.442261 12.9442L0.855932 11.8474L3.37878 12.7988L2.96511 13.8957L0.442261 12.9442Z"
+                                        fill="#C9C9C9" />
+                                    <path
+                                        d="M5.60828 6.92358L6.68992 6.47124L7.73033 8.95905L6.64868 9.41139L5.60828 6.92358Z"
+                                        fill="#C9C9C9" />
+                                    <path
+                                        d="M12.2834 8.9584L13.3239 6.47059L14.4055 6.92292L13.3651 9.41073L12.2834 8.9584Z"
+                                        fill="#C9C9C9" />
+                                    <path
+                                        d="M16.6332 12.8001L19.156 11.8486L19.5697 12.9455L17.0469 13.897L16.6332 12.8001Z"
+                                        fill="#C9C9C9" />
+                                    <path
+                                        d="M1.35352 8.10654L2.18203 7.27802L5.24754 10.3435L4.41902 11.172L1.35352 8.10654Z"
+                                        fill="#C9C9C9" />
+                                    <path
+                                        d="M14.7484 10.3449L17.8139 7.27941L18.6424 8.10792L15.5769 11.1734L14.7484 10.3449Z"
+                                        fill="#C9C9C9" />
+                                    <path
+                                        d="M17.3026 1.14651L15.5062 2.94292L16.3348 3.77155L17.131 2.97538V5.80862H18.3029V2.97538L19.1114 3.7839L19.9401 2.95526L18.1313 1.14651H17.3026Z"
+                                        fill="#C9C9C9" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0">
+                                        <rect width="20" height="20" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
 
+                        </span>
+                        <span class='weather-today__sunrise-time'>6:57</span>
+                    </div>
+                    <div class='weather-today__sunset'>
+                        <span class='weather-today__sunset-icon'>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0)">
+                                    <path d="M9.41406 4.28323H10.5859V8.61917H9.41406V4.28323Z" fill="#C9C9C9" />
+                                    <path
+                                        d="M16.1047 15.3379C15.8087 12.2301 13.184 9.79108 10 9.79108C6.81602 9.79108 4.19133 12.2301 3.89535 15.3379H0V16.5097H20V15.3379H16.1047ZM10 10.963C12.5373 10.963 14.6357 12.8775 14.9265 15.3379H5.07348C5.36426 12.8775 7.46273 10.963 10 10.963Z"
+                                        fill="#C9C9C9" />
+                                    <path d="M2.48706 17.6816H17.5131V18.8535H2.48706V17.6816Z" fill="#C9C9C9" />
+                                    <path
+                                        d="M0.442261 12.9442L0.855932 11.8474L3.37878 12.7988L2.96511 13.8957L0.442261 12.9442Z"
+                                        fill="#C9C9C9" />
+                                    <path
+                                        d="M5.60828 6.92358L6.68992 6.47124L7.73033 8.95905L6.64868 9.41139L5.60828 6.92358Z"
+                                        fill="#C9C9C9" />
+                                    <path
+                                        d="M12.2834 8.9584L13.3239 6.47059L14.4055 6.92292L13.3651 9.41073L12.2834 8.9584Z"
+                                        fill="#C9C9C9" />
+                                    <path
+                                        d="M16.6332 12.8001L19.156 11.8486L19.5697 12.9455L17.0469 13.897L16.6332 12.8001Z"
+                                        fill="#C9C9C9" />
+                                    <path
+                                        d="M1.35352 8.10654L2.18203 7.27802L5.24754 10.3435L4.41902 11.172L1.35352 8.10654Z"
+                                        fill="#C9C9C9" />
+                                    <path
+                                        d="M14.7484 10.3449L17.8139 7.27941L18.6424 8.10792L15.5769 11.1734L14.7484 10.3449Z"
+                                        fill="#C9C9C9" />
+                                    <path
+                                        d="M18.1436 5.80862L19.9401 4.01222L19.1115 3.18359L18.3152 3.97976V1.14651H17.1434V3.97976L16.3349 3.17124L15.5062 3.99987L17.315 5.80862H18.1436Z"
+                                        fill="#C9C9C9" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0">
+                                        <rect width="20" height="20" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
 
-    </div>
+                        </span>
+                        <span class='weather-today__sunset-time'>20:31</span>
+                    </div>
+                </div>
+            </div>
 
+        </div>
+
+        <div class='weather__temperature'></div>
+        </div>
+        <section>
 </body>
 
 </html>
