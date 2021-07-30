@@ -4,6 +4,7 @@ export class Weather {
         this.url = `https://api.openweathermap.org/data/2.5/`
         this.localization = document.querySelector('.weather-today__localization-city')
         this.temperature = document.querySelector('.weather__temperature')
+        this.sunCycleTime = document.querySelectorAll('.weather-today__cycle-time')
     }
 
     findLocalization(localization) {
@@ -11,14 +12,26 @@ export class Weather {
             .then(resp => resp.json())
             .then((data) => {
                 this.localization.textContent = `${data.name}, `
-                // this.localization.textContent = data.sys.country
-                // this.setTemperature(data.main.temp)
+                this.setTemperature(data.main.temp)
+                this.setCycleSun([data.sys.sunrise, data.sys.sunset])
             })
     }
 
-    // setTemperature(temp) {
-    //     let realTemperature = temp / 10
-    //     this.temperature.textContent = realTemperature.toFixed(0)
-    // }
+    setTemperature(temp) {
+        let realTemperature = temp / 10
+        this.temperature.textContent = realTemperature.toFixed(0)
+    }
+
+    setCycleSun(cycleSun) {
+        for (let i = 0; i < cycleSun.length; i++) {
+            let time = new Date(cycleSun[i] * 1000);
+            let timeSunrise = time.toLocaleTimeString(navigator.language, {
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+            this.sunCycleTime[i].textContent = timeSunrise;
+        }
+
+    }
 
 }

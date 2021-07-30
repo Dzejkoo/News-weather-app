@@ -1,7 +1,15 @@
 .weather {
-    background-color: $weather-bgc-color;
+    position: relative;
+    background-color: $weather-bgc-color-basic;
     max-width: 420px;
     height: 518px;
+    z-index: 0;
+    background-image: url(../images/weater-svg-bgc.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border-radius: 23px;
+
 
     &-today {
         color: $weather-text-color;
@@ -9,6 +17,7 @@
         margin: 0 auto;
         display: grid;
         grid-template-columns: 1fr auto;
+        z-index: 1;
 
         &__localization {
             grid-column: 1/2;
