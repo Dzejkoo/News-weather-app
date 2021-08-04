@@ -9,15 +9,17 @@
     background-repeat: no-repeat;
     background-size: 100%;
     border-radius: 23px;
+    color: $weather-text-color;
 
 
     &-today {
-        color: $weather-text-color;
         width: 83%;
         margin: 0 auto;
         display: grid;
         grid-template-columns: 1fr auto;
         z-index: 1;
+        padding-top: 20px;
+        grid-row-gap: 10px;
 
         &__localization {
             grid-column: 1/2;
@@ -25,6 +27,7 @@
 
             &-city {
                 font-size: 2.6rem;
+                padding: 0 5px;
             }
 
             &-country {
@@ -39,11 +42,16 @@
 
             font-size: 1.8rem;
             font-weight: 200;
+            // padding: 10px 0 0 0;
         }
 
         &__cycle {
             grid-column: 2/3;
             grid-row: 1/3;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
 
             font-size: 1.5rem;
             font-weight: 200;
