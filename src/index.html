@@ -14,8 +14,8 @@
 </head>
 
 <body>
-    <section class='weather-app'>
-        <div class='weather'>
+    <section class='weather'>
+        <div class='container'>
             <section class='weather-today'>
                 <div class='weather-today__localization'>
                     <span class='weather-today__localization-icon'>
@@ -127,14 +127,26 @@
             </section>
             <section class='weather-temperature'>
                 <img class='weather-temperature__icon'>
-                <span class='weather-temperature__number'></span>
+                <span class='weather-temperature__number'>
+                    <span class='weather-temperature__number-celsjusz'>°</span>
+                </span>
                 <div class='weather-temperature__property'>
-                    <span class='weather-temperature__property-humidity'></span>
-                    <span class='weather-temperature__property-wind'></span>
-                    <span class='weather-temperature__property-presure'></span>
+                    <span class='weather-temperature__property-humidity'>humidity:
+                        <span
+                            class='weather-temperature__property-humidity weather-temperature__property-humidity--bold'></span>
+                    </span>
+                    <span class='weather-temperature__property-wind'>wind:
+                        <span
+                            class='weather-temperature__property-wind weather-temperature__property-wind--bold'></span>
+                    </span>
+                    </span>
+                    <span class='weather-temperature__property-pressure'>pressure:
+                        <span
+                            class='weather-temperature__property-pressure weather-temperature__property-pressure--bold'></span>
+                    </span>
+                    </span>
                 </div>
             </section>
-        </div>
 
 </body>
 

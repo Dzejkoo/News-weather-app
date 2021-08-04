@@ -1,24 +1,34 @@
 .weather {
-    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: $weather-bgc-color-basic;
-    max-width: 420px;
+    width: 420px;
     height: 518px;
     z-index: 0;
-    background-image: url(../images/weater-svg-bgc.png);
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    border-radius: 23px;
     color: $weather-text-color;
+    border-radius: 23px;
 
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 65.5%;
+        background-image: url(../images/weater-svg-bgc.png);
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: 101%;
+
+    }
 
     &-today {
         width: 83%;
-        margin: 0 auto;
+        margin: 7.5% auto 0 auto;
         display: grid;
         grid-template-columns: 1fr auto;
         z-index: 1;
-        padding-top: 20px;
         grid-row-gap: 10px;
 
         &__localization {
@@ -42,7 +52,6 @@
 
             font-size: 1.8rem;
             font-weight: 200;
-            // padding: 10px 0 0 0;
         }
 
         &__cycle {
@@ -55,6 +64,59 @@
 
             font-size: 1.5rem;
             font-weight: 200;
+        }
+    }
+
+    &-temperature {
+        width: 90%;
+        margin: 0 auto 24% auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font-size: 1.3rem;
+
+        &__icon {
+            width: 32%;
+        }
+
+        &__number {
+            font-size: 9rem;
+            display: flex;
+
+            &-celsjusz {
+                font-size: 3.6rem;
+                order: 1;
+            }
+        }
+
+        &__property {
+            display: flex;
+            flex-direction: column;
+            margin-left: auto;
+
+            &-humidity {
+                padding-bottom: 5px;
+
+                &--bold {
+                    font-weight: 600;
+                }
+            }
+
+            &-wind {
+                padding-bottom: 5px;
+
+                &--bold {
+                    font-weight: 600;
+                }
+            }
+
+            &-pressure {
+                padding-bottom: 5px;
+
+                &--bold {
+                    font-weight: 600;
+                }
+            }
         }
     }
 }
