@@ -1,0 +1,34 @@
+.weather-week {
+    display: flex;
+    font-size: 1.5rem;
+    width: 83%;
+    margin: auto auto;
+    justify-content: space-between;
+
+    &__day {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__tittle {
+        color: #5C5C5C;
+
+        letter-spacing: 1px;
+    }
+
+    &__icon {
+        width: 32px;
+        padding: 6px 0;
+    }
+
+    &__higher {
+        color: #234145;
+        padding: 10px 0 10px 0;
+    }
+
+    &__lower {
+        color: #76989C
+    }
+
+}

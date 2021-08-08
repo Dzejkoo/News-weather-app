@@ -5,6 +5,5 @@ import {
 } from './js/weather';
 
 document.addEventListener('DOMContentLoaded', () => {
-    const weather = new Weather()
-    weather.findLocalization('poznan')
+    new Weather('Poznań')
 })

@@ -5,15 +5,20 @@
     transform: translate(-50%, -50%);
     background-color: $weather-bgc-color-basic;
     width: 420px;
+    max-width: 420px;
+    max-height: 518px;
     height: 518px;
     z-index: 0;
     color: $weather-text-color;
     border-radius: 23px;
+    display: flex;
 
+    flex-direction: column;
 
-    .container {
+    .container-today-weather {
         display: flex;
         flex-direction: column;
+        justify-self: self-end;
         justify-content: space-between;
         height: 65.5%;
         background-image: url(../images/weater-svg-bgc.png);
@@ -80,12 +85,11 @@
         }
 
         &__number {
-            font-size: 9rem;
+            font-size: 3.6rem;
             display: flex;
 
             &-celsjusz {
-                font-size: 3.6rem;
-                order: 1;
+                font-size: 9rem;
             }
         }
 

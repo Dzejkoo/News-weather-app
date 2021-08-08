@@ -1,6 +1,7 @@
 @import 'reset';
 @import 'variables';
-@import 'weather/weather';
+@import 'weather/weather-today';
+@import 'weather/weather-week';
 
 body,
 html {
@@ -8,4 +9,6 @@ html {
     font-family: 'Poppins',
         sans-serif;
     ;
+    background-color: grey;
+
 }
