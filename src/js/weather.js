@@ -23,7 +23,6 @@ export class Weather {
 
         //object elements 
         this.curenltyLocalization = curenltyLocalization;
-        this.setDate()
         this.setParametersForTodayTemperature(this.curenltyLocalization)
 
     }
@@ -51,6 +50,7 @@ export class Weather {
         const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
         const dataRestDays = data.splice(1, 5);
 
+
         for (let i = 0; i < this.daysName.length; i++) {
             let time = new Date(dataRestDays[i].valid_date);
             let src = `https://www.weatherbit.io/static/img/icons/${dataRestDays[i].weather.icon}.png`
@@ -60,9 +60,8 @@ export class Weather {
 
             this.daysHighTemp[i].textContent = `${dataRestDays[i].max_temp.toFixed(0)}°`
             this.daysLowTemp[i].textContent = `${dataRestDays[i].min_temp.toFixed(0)}°`
-
-
         }
+        this.setCurrentTime(data, days)
     }
 
     setTemperature(temp) {
@@ -80,9 +79,13 @@ export class Weather {
         }
     }
 
-    setDate() {
-        let now = new Date();
-        this.date.textContent = `Today ${now.getDate()}.${now.getMonth()}.${now.getFullYear()}`
+    setCurrentTime(currentTime, week) {
+        let month = ['January', 'Febuary', 'March', 'Aprlil', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+        let time = new Date();
+        let day = week[time.getDay()]
+        this.date.textContent = `Today ${time.getDate()} ${month[time.getMonth()]} `
+        console.log(day)
+
     }
 
     setIcon(icon) {
