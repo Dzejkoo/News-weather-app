@@ -61,7 +61,7 @@ export class Weather {
             this.daysHighTemp[i].textContent = `${dataRestDays[i].max_temp.toFixed(0)}°`
             this.daysLowTemp[i].textContent = `${dataRestDays[i].min_temp.toFixed(0)}°`
         }
-        this.setCurrentTime(data, days)
+        this.setCurrentTime()
     }
 
     setTemperature(temp) {
@@ -79,13 +79,10 @@ export class Weather {
         }
     }
 
-    setCurrentTime(currentTime, week) {
+    setCurrentTime() {
         let month = ['January', 'Febuary', 'March', 'Aprlil', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
         let time = new Date();
-        let day = week[time.getDay()]
         this.date.textContent = `Today ${time.getDate()} ${month[time.getMonth()]} `
-        console.log(day)
-
     }
 
     setIcon(icon) {
