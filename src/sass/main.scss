@@ -1,13 +1,22 @@
 @import 'reset';
 @import 'variables';
+@import 'breakpoints';
 @import 'weather/weather-today';
 @import 'weather/weather-week';
 
+
 body,
 html {
-    font-size: 10px;
+
+    font-size: 6px;
+
+    @media (min-width: $breakpoint-mobile) {
+        font-size: 10px;
+    }
+
+
     font-family: 'Poppins',
-        sans-serif;
+    sans-serif;
     ;
     background-color: grey;
 

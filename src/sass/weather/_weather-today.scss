@@ -4,41 +4,74 @@
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: $weather-bgc-color-basic;
-    width: 420px;
-    max-width: 420px;
-    max-height: 518px;
-    height: 518px;
+    width: 170px;
+    height: 129px;
     z-index: 0;
     color: $weather-text-color;
     border-radius: 23px;
     display: flex;
-
     flex-direction: column;
 
+    @media (min-width: $breakpoint-mobile) {
+
+        width: 420px;
+        max-width: 420px;
+        max-height: 518px;
+        height: 518px;
+    }
+
+
     .container-today-weather {
+        background-position: center;
+        background: radial-gradient(50% 50% at 50% 50%, rgba(36, 66, 70, 0.87) 0%, #244246 59.9%);
+        border-radius: 22px;
+        height: 100%;
         display: flex;
         flex-direction: column;
-        justify-self: self-end;
-        justify-content: space-between;
-        height: 65.5%;
-        background-image: url(../images/weater-svg-bgc.png);
-        background-position: top;
-        background-repeat: no-repeat;
-        background-size: 101%;
+        align-items: center;
+
+        justify-content: space-evenly;
+
+        @media (min-width: $breakpoint-mobile) {
+            justify-self: self-end;
+            justify-content: space-between;
+            height: 65.5%;
+            background-image: url(../images/weater-svg-bgc.png);
+            background-position: top;
+            background-repeat: no-repeat;
+            background-size: 101%;
+        }
 
     }
 
     &-today {
         width: 83%;
-        margin: 7.5% auto 0 auto;
+        margin: 0 auto;
+
+        @media (min-width: $breakpoint-mobile) {
+            margin: 7.5% auto 0 auto;
+        }
+
         display: grid;
         grid-template-columns: 1fr auto;
         z-index: 1;
-        grid-row-gap: 10px;
+        grid-row-gap: 5px;
+
+        @media (min-width: $breakpoint-mobile) {
+            grid-row-gap: 10px;
+        }
 
         &__localization {
             grid-column: 1/2;
             grid-row: 1/2;
+
+            &-icon {
+                width: 13px;
+
+                @media (min-width: $breakpoint-mobile) {
+                    width: 20px;
+                }
+            }
 
             &-city {
                 font-size: 2.6rem;
@@ -57,13 +90,25 @@
 
             font-size: 1.8rem;
             font-weight: 200;
+
+            &-name {
+                margin-left: 20px;
+
+                @media (min-width: $breakpoint-mobile) {
+                    margin-left: 0;
+                }
+            }
         }
 
         &__cycle {
             grid-column: 2/3;
             grid-row: 1/3;
 
-            display: flex;
+            @media (min-width: $breakpoint-mobile) {
+                display: flex;
+            }
+
+            display: none;
             flex-direction: column;
             justify-content: space-between;
 
@@ -73,15 +118,31 @@
     }
 
     &-temperature {
+
+
+        @media (min-width: $breakpoint-mobile) {
+            margin: 0 auto 24% auto;
+
+        }
+
         width: 90%;
-        margin: 0 auto 24% auto;
+
+        margin: 0 auto;
+        justify-content: flex-end;
         display: flex;
         flex-direction: row;
         align-items: center;
         font-size: 1.3rem;
 
         &__icon {
-            width: 32%;
+            width: 42%;
+            order: 1;
+
+            @media (min-width: $breakpoint-mobile) {
+                order: 0;
+                width: 32%;
+            }
+
         }
 
         &__number {
@@ -94,7 +155,11 @@
         }
 
         &__property {
-            display: flex;
+            @media (min-width: $breakpoint-mobile) {
+                display: flex;
+            }
+
+            display: none;
             flex-direction: column;
             margin-left: auto;
 

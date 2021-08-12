@@ -1,9 +1,14 @@
 .weather-week {
-    display: flex;
+
+    display: none;
     font-size: 1.5rem;
     width: 83%;
     margin: auto auto;
     justify-content: space-between;
+
+    @media (min-width: $breakpoint-mobile) {
+        display: flex;
+    }
 
     &__day {
         display: flex;
