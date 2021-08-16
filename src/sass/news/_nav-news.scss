@@ -19,10 +19,41 @@
         font-size: 1.5rem;
     }
 
-    &__items {
+    &__item {
         display: flex;
         align-items: center;
         cursor: pointer;
+        position: relative;
+        transition: 0.2s ease-in-out;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 105%;
+            height: 5px;
+            width: 5px;
+            border-radius: 50%;
+            background-color: $white-main-color;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+        }
+
+
+        &--active {
+            color: $white-main-color;
+            transition: 0.2s ease-in-out;
+            position: relative;
+
+            &::after {
+                opacity: 1;
+            }
+
+            .nav-news__icon rect {
+                fill: $white-main-color;
+                transition: 0.2s ease-in-out;
+            }
+        }
     }
 
     &__name {

@@ -3,7 +3,7 @@
     // top: 50%;
     // left: 50%;
     // transform: translate(-50%, -50%);
-    background-color: $weather-bgc-color-basic;
+    background-color: $white-main-color;
     background: radial-gradient(50% 50% at 50% 50%, rgba(36, 66, 70, 0.87) 0%, #244246 59.9%);
     width: 175px;
     height: 129px;
@@ -15,7 +15,7 @@
     justify-content: center;
 
     @media (min-width: $breakpoint-mobile) {
-        background: $weather-bgc-color-basic;
+        background: $white-main-color;
         width: 420px;
         max-width: 420px;
         max-height: 518px;
