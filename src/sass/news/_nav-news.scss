@@ -1,0 +1,35 @@
+.news-app {
+    width: 650px;
+    height: 439px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: $main-bgc-color;
+}
+
+.nav-news {
+    height: 71.7%;
+
+
+    &__list {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        font-size: 1.5rem;
+    }
+
+    &__items {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    &__name {
+        padding: 10px;
+    }
+
+    &__icon {
+        width: 25px;
+    }
+}
