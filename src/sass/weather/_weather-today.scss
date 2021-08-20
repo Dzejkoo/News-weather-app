@@ -9,7 +9,7 @@
     height: 129px;
     z-index: 0;
     color: $weather-text-color;
-    border-radius: 23px;
+    border-radius: $border-radius-app;
     display: flex;
     flex-direction: column;
     justify-content: center;
