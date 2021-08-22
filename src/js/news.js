@@ -5,6 +5,7 @@ export class News {
         this.fromWhereArticle = document.querySelectorAll('.news-article__from-where');
         this.titleArticle = document.querySelectorAll('.news-article__text-title');
         this.expansionArticle = document.querySelectorAll('.news-article__text-expansion')
+        this.goToWebSiteNews = document.querySelectorAll('.news-article__read-more')
 
     }
     getDataFromApiByCategory(category) {
@@ -19,25 +20,30 @@ export class News {
 
         for (let i = 0; i < this.articleImg.length; i++) {
 
-            //set content, title and  for article, from API and cut this by substring to max characters 
-            this.titleArticle[i].textContent = `${articles[i].title.substring(0, 40)}...`
-            this.expansionArticle[i].textContent = `${articles[i].content.substring(0, 80)}...`
+            //set content, title and source news for article, from API and cut this by substring to max characters
+            this.titleArticle[i].textContent = `${articles[i].title.substring(0, 40)} ...`
             this.fromWhereArticle[i].textContent = `${articles[i].source.name}`;
+            this.goToWebSiteNews[i].setAttribute('href', articles[i].url)
+            if (typeof articles[i].description === 'string') {
+                this.expansionArticle[i].textContent = `${articles[i].description.substring(0, 80)} ...`
+            } else {
+                this.expansionArticle[i].textContent = `Przejdź na strone artykułu, żeby dowiedzieć się więcej!`
+            }
 
+
+
+            //clear atrubute for next category
             this.articleImg[i].setAttribute('src', '')
 
+            //checking article has photo and set this 
             if (typeof articles[i].urlToImage === 'string') {
                 this.articleImg[i].setAttribute('src', articles[i].urlToImage)
 
             } else {
+                //somtimes article don't have img, here I set own photo
                 this.articleImg[i].setAttribute('src', './src/images/no-image.jpg')
             }
         }
 
     }
-    // setTextForArticles(title) {
-    //     let maxTitleLetter = title.substring(0, 40);
-    //     this.titleAricle.textContent = `${maxTitleLetter}...`
-
-    // }
 }
