@@ -32,6 +32,7 @@ export class Localization {
         map.on('click', function (e) {
             const weather = new Weather();
             weather.setParametersForTodayTemperature(e.latlng)
+            console.log(e.latlng);
             let weatherMap = document.querySelector('.weather-map');
             weatherMap.classList.remove('weather-map--active');
         })

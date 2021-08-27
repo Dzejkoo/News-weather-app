@@ -8,7 +8,8 @@ export class Weather {
         this.urlForecast = 'https://api.weatherbit.io/v2.0/'
 
         //DOM element
-        this.localization = document.querySelector('.weather-today__localization-city')
+        this.localizationCity = document.querySelector('.weather-today__localization-city')
+        this.localizationCountry = document.querySelector('.weather-today__localization-country')
         this.temperature = document.querySelector('.weather-temperature__number-celsjusz')
         this.sunCycleTime = document.querySelectorAll('.weather-today__cycle-time')
         this.date = document.querySelector('.weather-today__date-name')
@@ -23,26 +24,38 @@ export class Weather {
 
         //object elements 
         // this.coordinatesBasic = coordinates;
-        // this.setParametersForTodayTemperature(this.coordinatesBasic)
+        this.setParametersForTodayTemperature()
 
     }
 
     setParametersForTodayTemperature(coordinates) {
-        fetch(`${this.url}weather?lat=${coordinates.lat}&lon=${coordinates.lng}&units=metric&appid=${this.apiKey}`)
+        let lat;
+        let lng;
+
+        console.log(coordinates)
+        fetch(`${this.url}weather?lat=${coordinates === undefined ? lat = 52.409538 : lat = coordinates.lat}&lon=${coordinates === undefined ? lng = 16.931992 : lng = coordinates.lng}&units=metric&appid=${this.apiKey}`)
             .then(resp => resp.json())
             .then((data) => {
                 console.log(data)
-                this.localization.textContent = `${data.name},`
+                this.setCityAndCountry(data.name, data.sys.country)
                 this.setTemperature(data.main.temp)
                 this.setCycleSun([data.sys.sunrise, data.sys.sunset])
                 this.setIcon(`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`)
                 this.setProperties(data.main.humidity, data.wind.speed, data.main.pressure)
             })
-        this.setParametersForecast(coordinates)
+        this.setParametersForecast(lat, lng)
     }
 
-    setParametersForecast(coordinates) {
-        fetch(`${this.urlForecast}forecast/daily?lat=${coordinates.lat}&lon=${coordinates.lng}&key=${this.apiKeyForecast}&days=6`)
+    setCityAndCountry(city, country) {
+        this.localizationCity.innerHTML = `${city}, `
+        this.localizationCountry.innerHTML = `${country}`
+        console.log(country)
+
+
+    }
+
+    setParametersForecast(lat, lng) {
+        fetch(`${this.urlForecast}forecast/daily?lat=${lat}&lon=${lng}&key=${this.apiKeyForecast}&days=6`)
             .then(resp => resp.json())
             .then(data => this.setDateByApi(data.data))
     }
