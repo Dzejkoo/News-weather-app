@@ -1,8 +1,5 @@
 .weather {
-    // position: absolute;
-    // top: 50%;
-    // left: 50%;
-    // transform: translate(-50%, -50%);
+    position: relative;
     background-color: $white-main-color;
     background: radial-gradient(50% 50% at 50% 50%, rgba(36, 66, 70, 0.87) 0%, #244246 59.9%);
     width: 175px;
@@ -13,6 +10,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    overflow: hidden;
 
     @media (min-width: $breakpoint-mobile) {
         background: $white-main-color;
@@ -20,6 +18,34 @@
         max-width: 420px;
         max-height: 518px;
         height: 518px;
+    }
+
+    &-map {
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, 60%);
+        width: 100%;
+        height: 80%;
+        background: $main-bgc-color-light;
+        z-index: 3;
+        transition: ease-in-out 0.3s;
+        border-radius: 13px;
+
+        &__inside {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            height: 90%;
+            margin: 0 auto;
+            border-radius: 13px;
+        }
+
+        &--active {
+            transform: translate(-50%, -50%);
+        }
     }
 
 

@@ -1,5 +1,5 @@
 export class Weather {
-    constructor(curenltyLocalization) {
+    constructor() {
 
         //Api parametrs
         this.apiKey = 'cc12c5b435d66d200bd213f429d2c571'
@@ -22,26 +22,27 @@ export class Weather {
         this.daysLowTemp = document.querySelectorAll('.weather-week__lower')
 
         //object elements 
-        this.curenltyLocalization = curenltyLocalization;
-        this.setParametersForTodayTemperature(this.curenltyLocalization)
+        // this.coordinatesBasic = coordinates;
+        // this.setParametersForTodayTemperature(this.coordinatesBasic)
 
     }
 
-    setParametersForTodayTemperature(city) {
-        fetch(`${this.url}weather?q=${city}&units=metric&appid=${this.apiKey}`)
+    setParametersForTodayTemperature(coordinates) {
+        fetch(`${this.url}weather?lat=${coordinates.lat}&lon=${coordinates.lng}&units=metric&appid=${this.apiKey}`)
             .then(resp => resp.json())
             .then((data) => {
+                console.log(data)
                 this.localization.textContent = `${data.name},`
                 this.setTemperature(data.main.temp)
                 this.setCycleSun([data.sys.sunrise, data.sys.sunset])
                 this.setIcon(`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`)
                 this.setProperties(data.main.humidity, data.wind.speed, data.main.pressure)
             })
-        this.setParametersForecast()
+        this.setParametersForecast(coordinates)
     }
 
-    setParametersForecast() {
-        fetch(`${this.urlForecast}forecast/daily?city=poznan&key=${this.apiKeyForecast}&days=6`)
+    setParametersForecast(coordinates) {
+        fetch(`${this.urlForecast}forecast/daily?lat=${coordinates.lat}&lon=${coordinates.lng}&key=${this.apiKeyForecast}&days=6`)
             .then(resp => resp.json())
             .then(data => this.setDateByApi(data.data))
     }

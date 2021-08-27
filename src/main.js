@@ -4,9 +4,9 @@ import {
     Weather
 } from './js/weather';
 
-// import {
-//     News
-// } from './js/news'
+import {
+    Localization
+} from './js/localization-weather'
 
 import {
     CategoryNews
@@ -14,7 +14,9 @@ import {
 
 document.addEventListener('DOMContentLoaded', () => {
     new CategoryNews();
+    new Localization();
+    new Weather()
 
-    new Weather('Poznań')
+
 
 })
