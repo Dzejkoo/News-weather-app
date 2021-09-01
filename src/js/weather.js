@@ -21,6 +21,7 @@ export class Weather {
         this.daysIcon = document.querySelectorAll('.weather-week__icon');
         this.daysHighTemp = document.querySelectorAll('.weather-week__higher')
         this.daysLowTemp = document.querySelectorAll('.weather-week__lower')
+        this.inputMap = document.querySelector('.weather-map__input');
 
         //object elements 
         // this.coordinatesBasic = coordinates;
@@ -29,14 +30,13 @@ export class Weather {
     }
 
     setParametersForTodayTemperature(coordinates) {
-        let lat;
-        let lng;
+        let lat = coordinates === undefined ? 52.409538 : coordinates.lat;
+        let lng = coordinates === undefined ? 16.931992 : coordinates.lng;
 
-        console.log(coordinates)
-        fetch(`${this.url}weather?lat=${coordinates === undefined ? lat = 52.409538 : lat = coordinates.lat}&lon=${coordinates === undefined ? lng = 16.931992 : lng = coordinates.lng}&units=metric&appid=${this.apiKey}`)
+        // console.log(coordinates)
+        fetch(`${this.url}weather?lat=${lat}&lon=${lng}&units=metric&appid=${this.apiKey}`)
             .then(resp => resp.json())
             .then((data) => {
-                console.log(data)
                 this.setCityAndCountry(data.name, data.sys.country)
                 this.setTemperature(data.main.temp)
                 this.setCycleSun([data.sys.sunrise, data.sys.sunset])
@@ -49,7 +49,7 @@ export class Weather {
     setCityAndCountry(city, country) {
         this.localizationCity.innerHTML = `${city}, `
         this.localizationCountry.innerHTML = `${country}`
-        console.log(country)
+        this.inputMap.setAttribute('placeholder', city)
 
 
     }

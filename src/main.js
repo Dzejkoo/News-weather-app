@@ -16,7 +16,4 @@ document.addEventListener('DOMContentLoaded', () => {
     new CategoryNews();
     new Localization();
     new Weather()
-
-
-
 })
