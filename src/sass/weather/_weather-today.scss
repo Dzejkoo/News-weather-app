@@ -40,38 +40,13 @@
 
         &__inside {
             width: 90%;
-            height: 80%;
+            height: 90%;
             margin: 0 auto;
             border-radius: 13px;
         }
 
         &--active {
             transform: translate(-50%, -50%);
-        }
-
-        &__search {
-            width: 90%;
-            margin: 0 auto;
-            position: relative;
-            // padding: 10px 0px 15px 0;
-        }
-
-        &__input {
-            width: 35%;
-            padding: 8px 8px;
-            border: 0;
-            border-radius: 7px;
-
-            &::placeholder {
-                color: rgba(0, 0, 0, 0.17);
-            }
-
-            &-icon {
-                position: absolute;
-                left: 35%;
-                top: 50%;
-                transform: translate(-50%, -50%);
-            }
         }
     }
 

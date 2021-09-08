@@ -49,7 +49,6 @@ export class Weather {
     setCityAndCountry(city, country) {
         this.localizationCity.innerHTML = `${city}, `
         this.localizationCountry.innerHTML = `${country}`
-        this.inputMap.setAttribute('placeholder', city)
 
 
     }

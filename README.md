@@ -1,1 +1,3 @@
-# dashboard news-weather
+# Daashboard news-weather
+
+![](images/github/weather-image.png)
