@@ -9,14 +9,20 @@
 
 body,
 html {
-
-    font-size: 6px;
+    font-size: 8px;
 
     @media (min-width: $breakpoint-mobile) {
         font-size: 10px;
     }
 
+    display: flex;
 
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100vw;
+    min-height: 100vh;
 
     font-family: 'Poppins',
     sans-serif;
