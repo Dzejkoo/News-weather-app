@@ -3,14 +3,14 @@
 
 # News - weather app ✌️
 
-Simple app who enable check weather around the world and daily news. Here I try to learn how to work fetch API and use OOP JS. My own layout design. 
+Simple app who that allows you to check weather and news from the world. Here I try to learn how to work fetch API and use OOP JS. My own layout design. 
 
 ## Technologies: 
 - [Javascirpt](https://www.javascript.com/)
 - [SCSS](https://sass-lang.com/)
-- [Webpack](https://webpack.js.org/)
+- [Webpack](https://webpack.js.org/)``
 - [ESLint](https://eslint.org/)
-- [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) 
+- [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)  
 ## Built with:
   - [NewsApi](https://newsapi.org/) - Free worldwide news API 
   - [WeatherForecastAPI](https://www.weatherbit.io/) - Free forecast weather API 
