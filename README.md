@@ -3,7 +3,7 @@
 
 # News - weather app ✌️
 
-Simple app who that allows you to check weather and news from the world. Here I try to learn how to work fetch API and use OOP JS. My own layout design. 
+Simple app that allows you to check weather and news from the world. Here I try to learn how to work fetch API and use OOP JS. My own layout design. 
 
 ## Technologies: 
 - [Javascirpt](https://www.javascript.com/)
