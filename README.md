@@ -8,7 +8,7 @@ Simple app that allows you to check weather and news from the world. Here I try 
 ## Technologies: 
 - [Javascirpt](https://www.javascript.com/)
 - [SCSS](https://sass-lang.com/)
-- [Webpack](https://webpack.js.org/)``
+- [Webpack](https://webpack.js.org/)
 - [ESLint](https://eslint.org/)
 - [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)  
 ## Built with:
