@@ -11,7 +11,6 @@ export class News {
         this.titleArticle = document.querySelectorAll('.news-article__text-title');
         this.expansionArticle = document.querySelectorAll('.news-article__text-expansion')
         this.goToWebSiteNews = document.querySelectorAll('.news-article__read-more')
-
     }
 
     getDataFromApiByCategory(category) {
