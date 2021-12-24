@@ -13,7 +13,8 @@ import {
 } from './js/category-news'
 
 document.addEventListener('DOMContentLoaded', () => {
+    const weather = new Weather(); 
+
     new CategoryNews();
-    new Localization();
-    new Weather()
+    new Localization(weather.setParametersForTodayTemperature);
 })

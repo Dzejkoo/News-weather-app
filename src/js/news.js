@@ -1,6 +1,11 @@
+// export class to another file
 export class News {
     constructor() {
+
+        //Api parametrs
         this.apiKey = 'cafd73a1a4bb442999ce4c3167c3344e';
+
+        //DOM element
         this.articleImg = document.querySelectorAll('.news-article__image');
         this.fromWhereArticle = document.querySelectorAll('.news-article__from-where');
         this.titleArticle = document.querySelectorAll('.news-article__text-title');
@@ -8,6 +13,7 @@ export class News {
         this.goToWebSiteNews = document.querySelectorAll('.news-article__read-more')
 
     }
+
     getDataFromApiByCategory(category) {
         fetch(`https://newsapi.org/v2/top-headlines?country=pl&category=${category}&apiKey=${this.apiKey}`)
             .then(resp => resp.json())
@@ -20,17 +26,19 @@ export class News {
 
         for (let i = 0; i < this.articleImg.length; i++) {
 
-            //set content, title and source news for article, from API and cut this by substring to max characters
+            //set content, title and source news for article 
             this.titleArticle[i].textContent = `${articles[i].title.substring(0, 40)} ...`
             this.fromWhereArticle[i].textContent = `${articles[i].source.name}`;
             this.goToWebSiteNews[i].setAttribute('href', articles[i].url)
+
+            //Check what type is article, and cut this to max characters
             if (typeof articles[i].description === 'string') {
                 this.expansionArticle[i].textContent = `${articles[i].description.substring(0, 80)} ...`
             } else {
+
+                //When some articles don't have image I set own
                 this.expansionArticle[i].textContent = `Przejdź na strone artykułu, żeby dowiedzieć się więcej!`
             }
-
-
 
             //clear atrubute for next category
             this.articleImg[i].setAttribute('src', '')

@@ -1,10 +1,9 @@
-import {
-    Weather
-} from "./weather";
+// import { Weather } from "./weather.js";
 
 export class Localization {
-    constructor() {
+    constructor(setParametersForTodayTemperature) {
 
+        this.todayTemperature = setParametersForTodayTemperature; 
         this.apiKey = 'cc12c5b435d66d200bd213f429d2c571'
         this.iconLocalization = document.querySelector('.weather-today__localization-icon');
         this.weatherMap = document.querySelector('.weather-map');
@@ -32,8 +31,7 @@ export class Localization {
         }).addTo(map);
 
         map.on('click', function (e) {
-            const weather = new Weather();
-            weather.setParametersForTodayTemperature(e.latlng)
+            this.todayTemperature(e.latlng)
             let weatherMap = document.querySelector('.weather-map');
             weatherMap.classList.remove('weather-map--active');
         })

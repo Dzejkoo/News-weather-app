@@ -1,3 +1,4 @@
+//* export class to another file
 export class Weather {
     constructor() {
 
@@ -24,24 +25,31 @@ export class Weather {
         this.inputMap = document.querySelector('.weather-map__input');
 
         //object elements 
-        // this.coordinatesBasic = coordinates;
         this.setParametersForTodayTemperature()
 
     }
 
+    //*Get data from API, and set thoose 
     setParametersForTodayTemperature(coordinates) {
         let lat = coordinates === undefined ? 52.409538 : coordinates.lat;
         let lng = coordinates === undefined ? 16.931992 : coordinates.lng;
 
-        // console.log(coordinates)
         fetch(`${this.url}weather?lat=${lat}&lon=${lng}&units=metric&appid=${this.apiKey}`)
             .then(resp => resp.json())
             .then((data) => {
-                this.setCityAndCountry(data.name, data.sys.country)
-                this.setTemperature(data.main.temp)
-                this.setCycleSun([data.sys.sunrise, data.sys.sunset])
+
+                //* Destructuration element from API
+                const { name, main: { temp, humidity, pressure }, wind: { speed }, sys: { country, sunset, sunrise } } = data;
+
+                //Use city name and country 
+                this.setCityAndCountry(name, country)
+
+                this.setTemperature(temp)
+                this.setCycleSun([sunrise, sunset])
                 this.setIcon(`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`)
-                this.setProperties(data.main.humidity, data.wind.speed, data.main.pressure)
+
+                //Set rest properties
+                this.setProperties(humidity, speed, pressure)
             })
         this.setParametersForecast(lat, lng)
     }
@@ -49,8 +57,6 @@ export class Weather {
     setCityAndCountry(city, country) {
         this.localizationCity.innerHTML = `${city}, `
         this.localizationCountry.innerHTML = `${country}`
-
-
     }
 
     setParametersForecast(lat, lng) {
@@ -61,9 +67,11 @@ export class Weather {
 
     setDateByApi(data) {
         const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+
+        //cut two days
         const dataRestDays = data.splice(1, 5);
 
-
+        //Set date for each day a week into forecast weather
         for (let i = 0; i < this.daysName.length; i++) {
             let time = new Date(dataRestDays[i].valid_date);
             let src = `https://www.weatherbit.io/static/img/icons/${dataRestDays[i].weather.icon}.png`
@@ -107,5 +115,4 @@ export class Weather {
         this.wind.textContent = `${wind} km/h`
         this.pressure.textContent = `${pressure} hPa`
     }
-
 }
