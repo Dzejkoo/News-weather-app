@@ -1,10 +1,11 @@
-export class Localization {
-    constructor(setParametersForTodayTemperature) {
+import { Weather } from "./weather";
 
-        this.todayTemperature = setParametersForTodayTemperature; 
+export class Localization {
+    constructor() {
+
 
         // API parametrs 
-        this.apiKey = 'cc12c5b435d66d200bd213f429d2c571'
+        this.apiKey = 'cc12c5b435d66d200bd213f429d2c571';
 
         //DOM element
         this.iconLocalization = document.querySelector('.weather-today__localization-icon');
@@ -35,7 +36,8 @@ export class Localization {
         }).addTo(map);
 
         map.on('click', function (e) {
-            this.todayTemperature(e.latlng)
+            let weater = new Weather;
+            weater.setParametersForTodayTemperature(e.latlng)
             let weatherMap = document.querySelector('.weather-map');
             weatherMap.classList.remove('weather-map--active');
         })

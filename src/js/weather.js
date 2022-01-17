@@ -25,12 +25,13 @@ export class Weather {
         this.inputMap = document.querySelector('.weather-map__input');
 
         //object elements 
-        this.setParametersForTodayTemperature()
+        this.setParametersForTodayTemperature();
 
     }
 
     //*Get data from API, and set thoose 
     setParametersForTodayTemperature(coordinates) {
+
         let lat = coordinates === undefined ? 52.409538 : coordinates.lat;
         let lng = coordinates === undefined ? 16.931992 : coordinates.lng;
 
@@ -51,7 +52,7 @@ export class Weather {
                 //Set rest properties
                 this.setProperties(humidity, speed, pressure)
             })
-        this.setParametersForecast(lat, lng)
+        this.setParametersForecast(lat, lng);
     }
 
     setCityAndCountry(city, country) {
