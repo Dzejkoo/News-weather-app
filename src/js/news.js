@@ -11,6 +11,14 @@ export class News {
         this.titleArticle = document.querySelectorAll('.news-article__text-title');
         this.expansionArticle = document.querySelectorAll('.news-article__text-expansion')
         this.goToWebSiteNews = document.querySelectorAll('.news-article__read-more')
+
+        this.artciles =[ {
+            img: document.querySelector('.news-article__image'),
+            fromWhere: document.querySelector('.news-article__from-where'),
+            title: document.querySelector('.news-article__text-title'),
+            expansion: document.querySelector('.news-article__text-expansion'),
+            websiteNews: document.querySelector('.news-article__read-more'),
+        },  ]
     }
 
     getDataFromApiByCategory(category) {
@@ -22,8 +30,11 @@ export class News {
     }
 
     setPropertyForNews(articles) {
+            
+
 
         for (let i = 0; i < this.articleImg.length; i++) {
+  
 
             //set content, title and source news for article 
             this.titleArticle[i].textContent = `${articles[i].title.substring(0, 40)} ...`
