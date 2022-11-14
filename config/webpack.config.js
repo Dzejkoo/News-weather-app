@@ -10,7 +10,7 @@ module.exports = {
     entry: [paths.src + '/main.js'],
 
     output: {
-        path: paths.build,
+        path: paths.dist,
         filename: 'main.bundle.js'
     },
     devServer: {
@@ -58,5 +58,6 @@ module.exports = {
             template: 'src/index.html'
         }),
         new MiniCssExtractPlugin(),
+        
     ]
 }

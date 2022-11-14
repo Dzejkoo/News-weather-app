@@ -10,7 +10,7 @@ module.exports = {
     entry: [paths.src + '/main.js'],
 
     output: {
-        path: paths.build,
+        path: paths.dist,
         filename: 'js/[name]-[contenthash:4].bundle.js'
     },
     module: {
