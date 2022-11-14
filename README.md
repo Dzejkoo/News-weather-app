@@ -3,7 +3,8 @@
 
 # News - weather app ✌️
 
--> Live: https://dzejkoo.github.io/News-weather-app/ (NewsApi in developer plan is no more working in production. If you wan't test this feature clone this repo to your desctop)
+-> Live: https://dzejkoo.github.io/News-weather-app/ (NewsApi in developer plan is no more working in production. If you want test this feature clone this repo to your desctop)
+
 Simple app that allows you to check weather and news from the world. Here I try to learn how to work with fetch API and use OOP JS. My own layout design.
 
 ## Technologies:
